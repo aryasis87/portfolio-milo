@@ -13,7 +13,7 @@ export default function BlogPage() {
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2">
           {posts.map((p, i) => (
             <Reveal key={p.title} delay={(i % 2) * 0.08}>
-              <a href="#" className={`tile tile-hover group block h-full ${p.color} p-7`}>
+              <a href="/contact" className={`tile tile-hover group block h-full ${p.color} p-7`}>
                 <div className="mb-3 flex items-center gap-3 text-xs font-bold text-slate-500">
                   <span className="rounded-full bg-white/70 px-2.5 py-1 text-violet-600">{p.category}</span>
                   <span>{p.date}</span><span>·</span><span>{p.read}</span>
