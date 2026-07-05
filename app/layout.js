@@ -8,10 +8,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["500", "600", "700"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Milo","jobTitle":"Designer & Illustrator","url":"https://portfolio-milo.vercel.app","inLanguage":"en"}};
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Milo","jobTitle":"Designer & Illustrator","url":"https://milo.pintuweb.com","inLanguage":"en"}};
 
 export const metadata = {
-  metadataBase: new URL("https://portfolio-milo.vercel.app"),
+  metadataBase: new URL("https://milo.pintuweb.com"),
   title: "Milo — Designer & Illustrator",
   description: "Portfolio of Milo: playful, friendly product design & illustration that make digital products delightful.",
   applicationName: "Milo",
@@ -19,11 +19,11 @@ export const metadata = {
   authors: [{ name: "Milo" }],
   creator: "Milo",
   publisher: "Milo",
-  alternates: { canonical: "https://portfolio-milo.vercel.app" },
+  alternates: { canonical: "https://milo.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-milo.vercel.app",
+    url: "https://milo.pintuweb.com",
     siteName: "Milo",
     title: "Milo — Designer & Illustrator",
     description: "Portfolio of Milo: playful, friendly product design & illustration that make digital products delightful.",
