@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-fredoka), system-ui, sans-serif;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #fbfaff;
+  color: #221f33;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.tile { border-radius: 1.75rem; box-shadow: 0 10px 30px -12px rgba(80, 60, 160, 0.18); }
+.tile-hover { transition: transform .2s ease; }
+.tile-hover:hover { transform: translateY(-4px) rotate(-0.6deg); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1eefc; }
+::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 9999px; }
+
+:focus-visible { outline: 3px solid #8b5cf6; outline-offset: 2px; border-radius: 12px; }
+
+/* ---- Dark theme (darken surfaces & pastel tiles; violet accent kept) ---- */
+.dark { color-scheme: dark; }
+.dark body { background-color: #0d0b16 !important; color: #ececf5 !important; }
+.dark .bg-white { background-color: #16131f !important; }
+.dark .bg-white\/90 { background-color: rgba(22,19,31,0.9) !important; }
+.dark .bg-white\/70 { background-color: rgba(255,255,255,0.10) !important; }
+.dark .text-slate-900 { color: #f3f1fa !important; }
+.dark .text-slate-700 { color: #d3d0e2 !important; }
+.dark .text-slate-600 { color: #b4b1c8 !important; }
+.dark .text-slate-500 { color: #9c99b2 !important; }
+.dark .text-slate-400 { color: #8480a0 !important; }
+.dark .bg-violet-100 { background-color: rgba(139,92,246,0.18) !important; }
+.dark .bg-amber-100 { background-color: rgba(245,158,11,0.15) !important; }
+.dark .bg-emerald-100 { background-color: rgba(16,185,129,0.15) !important; }
+.dark .bg-rose-100 { background-color: rgba(244,63,94,0.15) !important; }
+.dark .bg-sky-100 { background-color: rgba(14,165,233,0.15) !important; }
+.dark .bg-fuchsia-100 { background-color: rgba(217,70,239,0.15) !important; }
+.dark .border-violet-100 { border-color: rgba(139,92,246,0.30) !important; }
