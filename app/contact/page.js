@@ -34,8 +34,8 @@ export default function ContactPage() {
             {sent ? (
               <div className="tile bg-white p-10 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-violet-500 text-white"><Check size={28} /></div>
-                <h2 className="mt-4 text-2xl font-extrabold text-slate-900">Yay, got it! 🎉</h2>
-                <p className="mt-1 text-slate-600">Thanks {form.name}! I’ll reply to {form.email} super soon.</p>
+                <h2 className="mt-4 text-2xl font-extrabold text-slate-900">Thanks for trying! 🎉</h2>
+                <p className="mt-1 text-slate-600">Psst, {form.name}: this is a portfolio template, so nothing was actually sent. In a live version, your message pops straight into the owner’s inbox.</p>
                 <button onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }); }} className="mt-6 rounded-full border-2 border-violet-200 px-6 py-2.5 text-sm font-bold text-violet-600 transition hover:bg-violet-50">Send another</button>
               </div>
             ) : (
