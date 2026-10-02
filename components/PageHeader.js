@@ -10,7 +10,7 @@ export default function PageHeader({ kicker, title, accent, sub }) {
           <h1 className="mt-4 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 md:text-6xl">
             {title} {accent && <span className="text-violet-500">{accent}</span>}
           </h1>
-          {sub && <p className="mt-5 max-w-2xl text-lg text-slate-500">{sub}</p>}
+          {sub && <p className="mt-5 max-w-2xl text-lg text-slate-600">{sub}</p>}
         </Reveal>
       </div>
     </section>

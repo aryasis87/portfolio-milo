@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageHeader from '@/components/PageHeader';
 import { projects } from '@/lib/data';
 
-const CATS = ['All', 'Product', 'Illustration', 'Branding'];
+const CATS = ['All', ...Array.from(new Set(projects.map((p) => p.category)))];
 
 export default function WorkPage() {
   const [cat, setCat] = useState('All');
@@ -18,7 +18,7 @@ export default function WorkPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 flex flex-wrap gap-2">
             {CATS.map((c) => (
-              <button key={c} onClick={() => setCat(c)} className={`rounded-full px-4 py-2 text-sm font-bold transition ${cat === c ? 'bg-violet-500 text-white' : 'bg-white text-slate-500 shadow-sm hover:text-violet-600'}`}>
+              <button key={c} onClick={() => setCat(c)} className={`rounded-full px-4 py-2 text-sm font-bold transition ${cat === c ? 'bg-violet-600 text-white' : 'bg-white text-slate-600 shadow-sm hover:text-violet-600'}`}>
                 {c}
               </button>
             ))}
@@ -26,15 +26,15 @@ export default function WorkPage() {
           <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {list.map((p) => (
-                <motion.a key={p.title} href="/contact" layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.3 }} className={`tile tile-hover group block overflow-hidden ${p.color}`}>
+                <motion.a key={p.slug} href={`/work/${p.slug}`} layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.3 }} className={`tile tile-hover group block overflow-hidden ${p.color}`}>
                   <div className="relative m-3 h-48 overflow-hidden rounded-2xl">
-                    <Image src={p.image} alt={p.title} fill sizes="(max-width:640px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                    <Image src={p.image} alt="" fill sizes="(max-width:640px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
                     <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-violet-600">{p.category}</span>
                   </div>
                   <div className="px-5 pb-5">
                     <div className="flex items-center justify-between">
                       <h3 className="font-extrabold text-slate-900">{p.title}</h3>
-                      <span className="text-xs font-bold text-slate-500">{p.year}</span>
+                      <span className="text-xs font-bold text-slate-600">{p.year}</span>
                     </div>
                     <p className="mt-1 text-sm text-slate-600">{p.desc}</p>
                   </div>

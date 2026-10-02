@@ -8,12 +8,12 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["500", "600", "700"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Milo","jobTitle":"Designer & Illustrator","url":"https://portfolio-milo.vercel.app","inLanguage":"en"}};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Milo — Designer & Illustrator","description":"Portfolio template for Milo, a fictional designer and illustrator: playful case studies that link to six live demo sites, plus notes on sticker shops, breathing animations, and storybook invitations.","inLanguage":"en"};
 
 export const metadata = {
   metadataBase: new URL("https://portfolio-milo.vercel.app"),
-  title: "Milo — Designer & Illustrator",
-  description: "Portfolio of Milo: playful, friendly product design & illustration that make digital products delightful.",
+  title: { default: "Milo — Designer & Illustrator", template: "%s — Milo" },
+  description: "Portfolio template for Milo, a fictional designer and illustrator: playful case studies that link to six live demo sites, plus notes on sticker shops, breathing animations, and storybook invitations.",
   applicationName: "Milo",
   keywords: ["illustrator", "product designer", "portfolio", "playful design", "illustration"],
   authors: [{ name: "Milo" }],
@@ -26,13 +26,13 @@ export const metadata = {
     url: "https://portfolio-milo.vercel.app",
     siteName: "Milo",
     title: "Milo — Designer & Illustrator",
-    description: "Portfolio of Milo: playful, friendly product design & illustration that make digital products delightful.",
+    description: "Portfolio template for Milo, a fictional designer and illustrator: playful case studies that link to six live demo sites, plus notes on sticker shops, breathing animations, and storybook invitations.",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Milo — Designer & Illustrator" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Milo — Designer & Illustrator",
-    description: "Portfolio of Milo: playful, friendly product design & illustration that make digital products delightful.",
+    description: "Portfolio template for Milo, a fictional designer and illustrator: playful case studies that link to six live demo sites, plus notes on sticker shops, breathing animations, and storybook invitations.",
     images: ["/og.jpg"],
   },
   robots: {
@@ -44,8 +44,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${fredoka.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${fredoka.variable}`} suppressHydrationWarning>
+      <body className="antialiased">
         <ThemeProvider>
           <Navbar />
           {children}

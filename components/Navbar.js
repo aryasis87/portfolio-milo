@@ -16,16 +16,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 px-4 pt-4">
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-violet-100 bg-white/90 px-5 py-3 shadow-[0_10px_30px_-12px_rgba(80,60,160,0.2)] backdrop-blur">
         <Link href="/" className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-violet-700">
-          <span className="grid h-7 w-7 place-items-center rounded-full bg-violet-500 text-sm text-white">M</span> Milo
+          <span className="grid h-7 w-7 place-items-center rounded-full bg-violet-600 text-sm text-white">M</span> Milo
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${isActive(l.href) ? 'bg-violet-100 text-violet-700' : 'text-slate-500 hover:bg-slate-100'}`}>
+            <Link key={l.href} href={l.href} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${isActive(l.href) ? 'bg-violet-100 text-violet-700' : 'text-slate-600 hover:bg-slate-100'}`}>
               {l.label}
             </Link>
           ))}
-          <Link href="/contact" className="ml-1 rounded-full bg-violet-500 px-5 py-2 text-sm font-bold text-white transition hover:bg-violet-600">
+          <Link href="/contact" className="ml-1 rounded-full bg-violet-600 px-5 py-2 text-sm font-bold text-white transition hover:bg-violet-700">
             Say hi 👋
           </Link>
         </div>

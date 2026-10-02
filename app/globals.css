@@ -34,6 +34,7 @@ body {
 .dark .bg-white\/90 { background-color: rgba(22,19,31,0.9) !important; }
 .dark .bg-white\/70 { background-color: rgba(255,255,255,0.10) !important; }
 .dark .text-slate-900 { color: #f3f1fa !important; }
+.dark .text-slate-900\/60 { color: rgba(243,241,250,0.62) !important; }
 .dark .text-slate-700 { color: #d3d0e2 !important; }
 .dark .text-slate-600 { color: #b4b1c8 !important; }
 .dark .text-slate-500 { color: #9c99b2 !important; }
@@ -44,4 +45,8 @@ body {
 .dark .bg-rose-100 { background-color: rgba(244,63,94,0.15) !important; }
 .dark .bg-sky-100 { background-color: rgba(14,165,233,0.15) !important; }
 .dark .bg-fuchsia-100 { background-color: rgba(217,70,239,0.15) !important; }
+/* Teks violet gelap tidak terbaca di latar gelap: angkat ke violet muda. */
+.dark .text-violet-700 { color: #c4b5fd !important; }
+.dark .text-violet-600 { color: #b39dfc !important; }
+.dark .hover\:text-violet-600:hover { color: #ddd6fe !important; }
 .dark .border-violet-100 { border-color: rgba(139,92,246,0.30) !important; }

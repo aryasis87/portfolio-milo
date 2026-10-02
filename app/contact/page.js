@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Check } from 'lucide-react';
+import { Mail, MapPin, Check } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { profile } from '@/lib/data';
 
@@ -9,7 +9,7 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
   const submit = (e) => { e.preventDefault(); if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return; setSent(true); };
-  const field = 'w-full rounded-2xl border-2 border-violet-100 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-violet-400';
+  const field = 'w-full rounded-2xl border-2 border-violet-100 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-violet-400';
 
   return (
     <main>
@@ -18,22 +18,18 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
             <Info icon={Mail} label="Email" value={profile.email} href={`mailto:${profile.email}`} color="bg-amber-100" />
-            <Info icon={Phone} label="Phone" value={profile.phone} href={`tel:${profile.phone.replace(/\s/g, '')}`} color="bg-emerald-100" />
             <Info icon={MapPin} label="Location" value={profile.location} color="bg-sky-100" />
             <div className="tile bg-violet-100 p-5">
               <span className="flex items-center gap-2 text-sm font-bold text-violet-700">
-                <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-violet-500" /> Open for new projects
+                <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-violet-600" /> Open for new projects
               </span>
               <p className="mt-2 text-sm text-slate-600">Booking fun work for next quarter!</p>
-            </div>
-            <div className="flex flex-wrap gap-4 pt-1">
-              {profile.socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-500 transition hover:text-violet-600">{s.label}</a>)}
             </div>
           </div>
           <div>
             {sent ? (
               <div className="tile bg-white p-10 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-violet-500 text-white"><Check size={28} /></div>
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 text-white"><Check size={28} /></div>
                 <h2 className="mt-4 text-2xl font-extrabold text-slate-900">Thanks for trying! 🎉</h2>
                 <p className="mt-1 text-slate-600">Psst, {form.name}: this is a portfolio template, so nothing was actually sent. In a live version, your message pops straight into the owner’s inbox.</p>
                 <button onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }); }} className="mt-6 rounded-full border-2 border-violet-200 px-6 py-2.5 text-sm font-bold text-violet-600 transition hover:bg-violet-50">Send another</button>
@@ -45,7 +41,7 @@ export default function ContactPage() {
                   <input type="email" name="email" value={form.email} onChange={handle} placeholder="Your email" required className={field} />
                 </div>
                 <textarea name="message" value={form.message} onChange={handle} placeholder="Tell me about your fun idea…" rows={6} required className={`${field} resize-none`} />
-                <button type="submit" className="w-full rounded-full bg-violet-500 py-3.5 font-bold text-white transition hover:bg-violet-600">Send it! 🚀</button>
+                <button type="submit" className="w-full rounded-full bg-violet-600 py-3.5 font-bold text-white transition hover:bg-violet-700">Send it! 🚀</button>
               </form>
             )}
           </div>
@@ -60,7 +56,7 @@ function Info({ icon: Icon, label, value, href, color }) {
     <div className={`tile tile-hover flex items-start gap-4 ${color} p-5`}>
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/70 text-slate-700"><Icon size={20} /></span>
       <div>
-        <p className="text-xs font-bold uppercase tracking-wide text-slate-500">{label}</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-slate-600">{label}</p>
         <p className="mt-0.5 font-extrabold text-slate-900">{value}</p>
       </div>
     </div>

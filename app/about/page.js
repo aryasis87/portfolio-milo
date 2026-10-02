@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/ui/Reveal';
 import { profile, skills, experience, education } from '@/lib/data';
 
-export const metadata = { title: 'About — Milo' };
+export const metadata = { title: 'About' };
 
 export default function AboutPage() {
   return (
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:grid-cols-2">
           <Reveal>
             <div className="tile relative aspect-[4/5] w-full overflow-hidden">
-              <Image src={profile.avatar} alt={profile.name} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
+              <Image src={profile.about} alt="" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -25,7 +25,7 @@ export default function AboutPage() {
               <div className="mt-4 space-y-4 leading-relaxed text-slate-700">
                 {profile.bio.map((p, i) => <p key={i}>{p}</p>)}
               </div>
-              <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-violet-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-violet-600">
+              <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-violet-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-violet-700">
                 <Download size={16} /> Download CV
               </Link>
             </div>
@@ -60,7 +60,7 @@ export default function AboutPage() {
                 <div className="tile flex flex-col gap-2 bg-white p-6 md:flex-row md:items-center md:gap-8">
                   <span className="shrink-0 rounded-full bg-violet-100 px-4 py-1.5 text-sm font-bold text-violet-700 md:w-40">{e.period}</span>
                   <div>
-                    <h3 className="text-lg font-extrabold text-slate-900">{e.role} <span className="font-medium text-slate-400">· {e.company}</span></h3>
+                    <h3 className="text-lg font-extrabold text-slate-900">{e.role} <span className="font-medium text-slate-500">· {e.company}</span></h3>
                     <p className="mt-1 text-slate-600">{e.desc}</p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             {education.map((e, i) => (
               <Reveal key={i} delay={i * 0.1}>
                 <div className="tile bg-sky-100 p-6">
-                  <span className="text-xs font-bold text-slate-500">{e.period}</span>
+                  <span className="text-xs font-bold text-slate-600">{e.period}</span>
                   <h3 className="mt-2 text-lg font-extrabold text-slate-900">{e.degree}</h3>
                   <p className="text-sm text-slate-600">{e.school}</p>
                 </div>
